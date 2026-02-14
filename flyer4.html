@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senjin Holdings - 採用チラシ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    width: 794px;
+    height: 1123px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    font-family: 'Noto Sans JP', sans-serif;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .page {
+    width: 794px;
+    height: 1123px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    background-size: 128px;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* ===== ZONE 1: CATCH + BENEFITS — 370px ===== */
+  .zone-catch {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 370px;
+    padding: 20px 36px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .zone-catch::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(255,204,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .zone-catch::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,204,0,0.3) 20%, rgba(255,204,0,0.3) 80%, transparent);
+  }
+
+  .tag-line {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 3.5px; text-transform: uppercase;
+    color: #ffcc00; margin-bottom: 8px;
+  }
+
+  .headline {
+    font-weight: 900; font-size: 28px;
+    line-height: 1.4; color: #fff;
+  }
+
+  .headline em {
+    font-style: normal; color: #ffcc00; position: relative;
+  }
+
+  .headline em::after {
+    content: '';
+    position: absolute; bottom: 1px; left: 0; right: 0;
+    height: 2px; background: #ffcc00; opacity: 0.4;
+  }
+
+  .sub-copy {
+    margin-top: 6px; font-size: 9.5px;
+    line-height: 1.7; color: rgba(255,255,255,0.5);
+  }
+
+  .benefits-header {
+    margin-top: 12px;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 7px;
+  }
+
+  .benefits-header-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+  .benefits-header-text {
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; color: rgba(255,204,0,0.8);
+    white-space: nowrap;
+  }
+
+  .benefits-subtitle {
+    text-align: center;
+    font-size: 14px; font-weight: 900;
+    color: #fff; margin-bottom: 9px;
+  }
+
+  .benefits-subtitle span { color: #ffcc00; }
+
+  .benefits-list { display: flex; flex-direction: column; gap: 5px; }
+
+  .benefit-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+  }
+
+  .benefit-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; line-height: 1;
+    color: #ffcc00; flex-shrink: 0; margin-top: 1px;
+  }
+
+  .benefit-title {
+    font-size: 10px; font-weight: 900; color: #fff; margin-bottom: 1px;
+  }
+
+  .benefit-desc {
+    font-size: 8px; line-height: 1.5; color: rgba(255,255,255,0.45);
+  }
+
+  /* ===== ZONE 2: NUMBERS — 500px ===== */
+  .zone-numbers {
+    position: absolute;
+    top: 370px; left: 0; right: 0;
+    height: 500px;
+    padding: 14px 36px 10px;
+  }
+
+  .numbers-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px; letter-spacing: 3px;
+    color: rgba(255,255,255,0.3); margin-bottom: 10px;
+  }
+
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    height: calc(100% - 28px);
+  }
+
+  .num-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .num-card-label {
+    font-size: 8px; font-weight: 700;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .num-card-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px; color: #ffcc00; line-height: 1;
+  }
+
+  .num-card-value span {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+  }
+
+  .num-card-chart { flex: 1; display: flex; align-items: flex-end; margin-top: 4px; min-height: 0; }
+
+  .donut-wrap {
+    display: flex; align-items: center; gap: 10px; flex: 1; margin-top: 2px;
+  }
+
+  .donut-svg { width: 82px; height: 82px; flex-shrink: 0; }
+
+  .donut-legend { display: flex; flex-direction: column; gap: 3px; }
+
+  .donut-legend-item {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 7.5px; color: rgba(255,255,255,0.5);
+  }
+
+  .legend-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .bar-chart {
+    display: flex; align-items: flex-end; gap: 4px;
+    flex: 1; height: 100%;
+  }
+
+  .bar-col {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end; height: 100%;
+  }
+
+  .bar-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8px; color: rgba(255,255,255,0.5); margin-bottom: 2px;
+  }
+
+  .bar { width: 100%; border-radius: 2px 2px 0 0; min-height: 3px; }
+  .bar-year { font-size: 6.5px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+
+  .map-wrap { flex: 1; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .map-svg { width: 100%; height: 100%; }
+
+  /* ===== ZONE 3: CTA — 253px ===== */
+  .zone-cta {
+    position: absolute;
+    top: 870px; left: 0; right: 0;
+    height: 253px;
+    background: #ffcc00;
+    padding: 20px 36px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .zone-cta::before {
+    content: '';
+    position: absolute; top: -30px; right: 50px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-top {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .cta-hook {
+    font-size: 18px; font-weight: 900;
+    color: #0a0a0a; line-height: 1.4;
+  }
+
+  .cta-sub {
+    font-size: 9px; color: rgba(10,10,10,0.5); margin-top: 3px;
+  }
+
+  .cta-cards {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .cta-card {
+    flex: 1;
+    max-width: 220px;
+    background: rgba(10,10,10,0.08);
+    border-radius: 10px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-card-icon {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .cta-card-title {
+    font-size: 10px;
+    font-weight: 900;
+    color: #0a0a0a;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  .cta-card-desc {
+    font-size: 7px;
+    color: rgba(10,10,10,0.45);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .cta-qr {
+    width: 62px; height: 62px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .cta-qr-text {
+    font-size: 7px; color: #aaa;
+    text-align: center; line-height: 1.3; font-weight: 700;
+  }
+
+  .company-info {
+    position: absolute; bottom: 6px; left: 36px;
+    font-size: 6.5px; color: rgba(10,10,10,0.25);
+  }
+
+  @media print {
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ZONE 1 -->
+  <div class="zone-catch">
+    <div class="tag-line">Where Business Gets Serious</div>
+    <h1 class="headline">ビジネスに<em>本気</em>になれる<br>環境が、ここにある。</h1>
+    <p class="sub-copy">年齢や経歴ではなく、意志と成果で評価される。若手が第一線で挑戦し続ける、成長の最前線へ。</p>
+
+    <div class="benefits-header">
+      <div class="benefits-header-line"></div>
+      <div class="benefits-header-text">Senjinで得られるもの</div>
+      <div class="benefits-header-line"></div>
+    </div>
+    <div class="benefits-subtitle"><span>ビジネスアスリート</span>への最短ルート</div>
+
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-num">01</div>
+        <div>
+          <div class="benefit-title">実力主義の評価制度</div>
+          <div class="benefit-desc">年功序列一切なし。年齢・経歴不問。入社3年以内に年収1,000万円を超える社員が多数在籍。</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num">02</div>
+        <div>
+          <div class="benefit-title">成長性の高い事業展開</div>
+          <div class="benefit-desc">「広告業界をAIで席巻する」ことをゴールに、Web広告業界において唯一無二のAIプロダクトを提供。</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num">03</div>
+        <div>
+          <div class="benefit-title">熱意のあるメンバーの集合体</div>
+          <div class="benefit-desc">元サッカー日本代表・フェンシング全日本チャンピオン・ビジネスコンテスト日本一など個性的なメンバーが熱狂中。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE 2 -->
+  <div class="zone-numbers">
+    <div class="numbers-header">SENJIN BY THE NUMBERS</div>
+    <div class="numbers-grid">
+
+      <div class="num-card">
+        <div class="num-card-label">平均年齢</div>
+        <div class="num-card-value">26.2<span>歳</span></div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
+            <circle cx="50" cy="50" r="36" fill="none" stroke="#ffcc00" stroke-width="14"
+              stroke-dasharray="67.9 158.2" stroke-dashoffset="56.5" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="36" fill="none" stroke="#e6a800" stroke-width="14"
+              stroke-dasharray="101.8 124.3" stroke-dashoffset="-11.3" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,204,0,0.3)" stroke-width="14"
+              stroke-dasharray="56.5 169.6" stroke-dashoffset="-113.1" transform="rotate(-90 50 50)"/>
+            <text x="50" y="47" text-anchor="middle" fill="#fff" font-family="Bebas Neue" font-size="18">26.2</text>
+            <text x="50" y="59" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Noto Sans JP" font-size="7">歳</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="donut-legend-item"><div class="legend-dot" style="background:#ffcc00"></div>20〜24歳 30%</div>
+            <div class="donut-legend-item"><div class="legend-dot" style="background:#e6a800"></div>25〜29歳 45%</div>
+            <div class="donut-legend-item"><div class="legend-dot" style="background:rgba(255,204,0,0.3)"></div>30歳〜 25%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-card-label">社員数の推移</div>
+        <div class="num-card-value">110<span>名</span></div>
+        <div class="num-card-chart">
+          <div class="bar-chart">
+            <div class="bar-col"><div class="bar-value">5</div><div class="bar" style="height:5%;background:#ffcc00;opacity:0.35"></div><div class="bar-year">'19</div></div>
+            <div class="bar-col"><div class="bar-value">15</div><div class="bar" style="height:14%;background:#ffcc00;opacity:0.45"></div><div class="bar-year">'20</div></div>
+            <div class="bar-col"><div class="bar-value">30</div><div class="bar" style="height:27%;background:#ffcc00;opacity:0.55"></div><div class="bar-year">'21</div></div>
+            <div class="bar-col"><div class="bar-value">50</div><div class="bar" style="height:45%;background:#ffcc00;opacity:0.65"></div><div class="bar-year">'22</div></div>
+            <div class="bar-col"><div class="bar-value">75</div><div class="bar" style="height:68%;background:#ffcc00;opacity:0.8"></div><div class="bar-year">'23</div></div>
+            <div class="bar-col"><div class="bar-value">95</div><div class="bar" style="height:86%;background:#ffcc00;opacity:0.9"></div><div class="bar-year">'24</div></div>
+            <div class="bar-col"><div class="bar-value">110</div><div class="bar" style="height:100%;background:#ffcc00"></div><div class="bar-year">'25</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-card-label">売上高の推移</div>
+        <div class="num-card-value" style="font-size:24px">右肩上がり<span>で成長中</span></div>
+        <div class="num-card-chart">
+          <div class="bar-chart">
+            <div class="bar-col"><div class="bar" style="height:6%;background:rgba(255,204,0,0.3)"></div><div class="bar-year">'19</div></div>
+            <div class="bar-col"><div class="bar" style="height:15%;background:rgba(255,204,0,0.4)"></div><div class="bar-year">'20</div></div>
+            <div class="bar-col"><div class="bar" style="height:28%;background:rgba(255,204,0,0.5)"></div><div class="bar-year">'21</div></div>
+            <div class="bar-col"><div class="bar" style="height:45%;background:rgba(255,204,0,0.6)"></div><div class="bar-year">'22</div></div>
+            <div class="bar-col"><div class="bar" style="height:62%;background:rgba(255,204,0,0.75)"></div><div class="bar-year">'23</div></div>
+            <div class="bar-col"><div class="bar" style="height:80%;background:rgba(255,204,0,0.9)"></div><div class="bar-year">'24</div></div>
+            <div class="bar-col"><div class="bar" style="height:100%;background:#ffcc00"></div><div class="bar-year">'25</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-card-label">全国の拠点</div>
+        <div class="num-card-value">4<span>拠点</span></div>
+        <div class="map-wrap">
+          <svg class="map-svg" viewBox="0 0 280 190" fill="none">
+            <path d="M210,15 Q225,8 235,15 Q243,22 240,32 Q235,40 227,38 Q218,36 213,30 Q208,23 210,15Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <path d="M148,38 Q168,32 188,36 Q205,42 215,50 Q220,58 215,66 Q205,74 195,76 Q185,73 178,78 Q168,86 156,90 Q145,92 135,86 Q125,80 120,72 Q116,64 122,56 Q130,48 142,42Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <path d="M128,94 Q140,90 148,94 Q153,99 148,104 Q140,107 130,104 Q125,100 128,94Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <path d="M92,88 Q104,82 114,88 Q120,96 116,106 Q110,114 100,116 Q90,114 86,106 Q83,97 92,88Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <circle cx="198" cy="66" r="5.5" fill="#ffcc00"/>
+            <circle cx="198" cy="66" r="10" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.3"/>
+            <text x="198" y="58" text-anchor="middle" fill="#fff" font-size="8" font-weight="700" font-family="Noto Sans JP">東京</text>
+            <circle cx="135" cy="82" r="4" fill="#ffcc00" opacity="0.8"/>
+            <circle cx="135" cy="82" r="7.5" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.25"/>
+            <text x="135" y="75" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Noto Sans JP">岩国</text>
+            <circle cx="96" cy="94" r="4" fill="#ffcc00" opacity="0.8"/>
+            <circle cx="96" cy="94" r="7.5" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.25"/>
+            <text x="82" y="92" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Noto Sans JP">福岡</text>
+            <circle cx="88" cy="112" r="4" fill="#ffcc00" opacity="0.8"/>
+            <circle cx="88" cy="112" r="7.5" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.25"/>
+            <text x="74" y="122" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Noto Sans JP">天草</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ZONE 3: CTA with 3 cards -->
+  <div class="zone-cta">
+    <div class="cta-top">
+      <div class="cta-hook">まずは、Senjinを知ってください。</div>
+      <div class="cta-sub">動画・採用サイト・LINEからお気軽にアクセスできます</div>
+    </div>
+
+    <div class="cta-cards">
+      <div class="cta-card">
+        <div class="cta-card-icon">🎬</div>
+        <div class="cta-card-title">会社密着動画</div>
+        <div class="cta-card-desc">リアルな社内の雰囲気を<br>動画でチェック</div>
+        <div class="cta-qr"><div class="cta-qr-text">動画<br>QR</div></div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-icon">💻</div>
+        <div class="cta-card-title">採用HP</div>
+        <div class="cta-card-desc">募集要項・社員インタビューは<br>こちらから</div>
+        <div class="cta-qr"><div class="cta-qr-text">採用HP<br>QR</div></div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-icon">💬</div>
+        <div class="cta-card-title">公式LINE</div>
+        <div class="cta-card-desc">カジュアル面談・説明会の<br>ご案内はこちら</div>
+        <div class="cta-qr"><div class="cta-qr-text">LINE<br>QR</div></div>
+      </div>
+    </div>
+
+    <div class="company-info">株式会社Senjin Holdings ｜ 設立2019年 ｜ 社員数110名 ｜ Web広告 / AI開発 ｜ https://senjin-holdings.co.jp</div>
+  </div>
+
+</div>
+</body>
+</html>
